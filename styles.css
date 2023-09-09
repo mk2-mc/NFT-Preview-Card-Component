@@ -66,6 +66,7 @@ a {
   height: 100%;
   background-color: var(--clr-accent);
   opacity: 0;
+  transition: 0.2s;
 }
 
 .img-button::after {
@@ -77,6 +78,7 @@ a {
   height: 100%;  
   background: url("images/icon-view.svg") no-repeat center;
   opacity: 0;
+  transition: 0.2s;
 }
 
 .img-button:focus-visible::before, 
