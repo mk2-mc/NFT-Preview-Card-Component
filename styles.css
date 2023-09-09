@@ -2,8 +2,7 @@
   --clr-primary: hsl(215, 51%, 70%);
   
   --clr-accent: hsl(178, 100%, 50%);
-  --clr-accent-alpha: hsla(178, 100%, 50%, 50%);
-  
+ 
   --clr-neutral-100: hsl(0, 0%, 100%);
   --clr-neutral-700: hsl(215, 32%, 27%);
   --clr-neutral-800: hsl(216, 50%, 16%);
@@ -43,33 +42,51 @@ a {
   box-shadow: 0 1.875rem 0.625rem 1rem var(--clr-shadow);
 }
 
-.img-wrapper {
+.img-button {
   position: relative;
   overflow: hidden;
   border-radius: 0.5rem;
+  border: none;
+  outline: none;
+  background: none;
+  cursor: pointer;
 }
 
-.img-wrapper img {
+.img-button img {
   display: block;
-  width: 100%;
+  max-width: 100%;
 }
 
-.img-overlay {
-  display: none;
+.img-button::before {
+  content: "";
   position: absolute;
   top: 0;
   left: 0;
   width: 100%;
   height: 100%;
-  background-color: var(--clr-accent-alpha);
-  background-image: url("images/icon-view.svg");
-  background-repeat: no-repeat;
-  background-position: center;
+  background-color: var(--clr-accent);
+  opacity: 0;
 }
 
-.img-link:focus-visible .img-overlay, 
-.img-link:hover .img-overlay {
-  display: block;
+.img-button::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;  
+  background: url("images/icon-view.svg") no-repeat center;
+  opacity: 0;
+}
+
+.img-button:focus-visible::before, 
+.img-button:hover::before {
+  opacity: 0.5;
+}
+
+.img-button:focus-visible::after, 
+.img-button:hover::after {
+  opacity: 1;
 }
 
 .title-link {
