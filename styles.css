@@ -78,7 +78,7 @@ a {
 }
 
 .title-link {
-  display: block;
+  display: inline-block;
   margin-top: 1rem;
   font-size: 1.35rem;
   font-weight: 600;
@@ -92,7 +92,7 @@ a {
 }
 
 .description {
-  margin-top: 1rem;
+  margin-top: 0.7rem;
   font-weight: 300;
 }
 
